@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+:root {
+    --light-blue: rgb(137, 216, 253);
+    --light-pink: rgba(223, 189, 255);
+    --dark-purple: rgb(1, 0, 3);
+    --light-purple: #BEC8FE;
+    --light-gray: rgb(163, 165, 177);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Courier Prime, Arial;
+}
+
+body {
+    background: linear-gradient(120deg, var(--light-blue), var(--light-pink));
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 105px);
+    grid-template-rows: minmax(125px, auto) repeat(5, 95px);
+}
+
+.output {
+    grid-column: 1/-1;
+    background: rgb(1, 0, 3);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-flow: column;
+    padding: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.span-two {
+    grid-column: span 2;
+    text-transform: uppercase;
+}
+
+.calculator-grid>button {
+    font-size: 2rem;
+    color: rgb(1, 0, 3);
+    background: rgba(255, 255, 255, .7);
+    outline: none;
+    border: 1px solid var(--light-purple);
+}
+
+.calculator-grid>button:hover {
+    background: linear-gradient(120deg, var(--light-purple), var(--light-pink));
+}
+
+.previous-operand {
+    color: var(--light-gray);
+    font-size: 1.5rem;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 2rem;
+}
